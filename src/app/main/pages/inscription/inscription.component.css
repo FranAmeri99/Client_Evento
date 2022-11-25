@@ -1,0 +1,24 @@
+.datos{
+
+    background-color: white;
+    
+   border-radius: 18px;
+   background: white;
+   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+   font-family: roboto;
+   text-align: center;
+   height: max-content ;
+   
+
+}
+.br{
+    background-color: #822c43;
+
+}
+.btn{
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 300px;
+}
+
+

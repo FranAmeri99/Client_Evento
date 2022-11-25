@@ -1,0 +1,72 @@
+.moreInfo {
+  width: 95%;
+}
+
+h1 {
+  color: white;
+}
+
+.container-fluid {
+  height: max-content;
+
+}
+
+.tarjeta:hover {
+  transform: scale(1.15);
+}
+
+.tarjeta {
+  transform: scale(0.95);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.card {
+  height: max-content;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  font-family: roboto;
+  text-align: center;
+  height: auto;
+  padding: 3%;
+  width: 100%;
+}
+
+.header {
+  flex: 1;
+  justify-content: space-evenly;
+  background-color: #bc0c3c;
+  color: white;
+  text-align: center;
+}
+
+.card-stats .stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  color: white;
+  padding: 10px;
+}
+
+.card1{
+  max-height: auto;
+}
+.date {
+  color: rgb(255, 7, 110);
+  font-size: 13px;
+  text-align: center;
+}
+
+.p {
+  color: grey;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.card-text h2 {
+  margin-top: 0px;
+  font-size: 28px;
+}

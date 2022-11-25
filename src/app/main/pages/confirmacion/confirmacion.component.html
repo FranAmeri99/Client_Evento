@@ -1,0 +1,32 @@
+<br><br><br><br><br><br><br><br>
+<div class="datos container">
+
+    <br>
+    <h1>Inscripción Confirmada</h1>
+    <h4>Tu inscripción al evento está confirmada.
+        Deberás presentar el siguiente código: </h4>
+    <h2 style="color: blue">
+        {{id_asistente}}
+    </h2>
+
+    <h4>
+        En los próximos días te enviaremos un correo para recordarte del evento.
+        ¡¡Te esperamos en UBP!!
+    </h4>
+    <br>
+  
+    <form [formGroup]="fcomentario" (ngSubmit)="enviarComentario()" class="container">
+        <p align="left">Comentario:</p>
+        <textarea class="form-control"  formControlName=comentario rows="3" placeholder="Nos interesa que nos dejes un comentario"></textarea>
+        <br>
+        <button type="button" class="btn btn-warning" type="submit">
+            Enviar Comentario
+        </button>
+    </form>
+    <button type="button" class="btn btn-primary" [routerLink]="['/home']" routerLinkActive="router-link-active">
+        Volver al inicio
+    </button>
+    
+    <br><br>
+
+</div>

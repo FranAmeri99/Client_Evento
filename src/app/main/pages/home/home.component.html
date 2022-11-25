@@ -1,0 +1,65 @@
+<div class="todo">
+  <br>
+
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col text-center" style="align-self: center;">
+      <h1>Eventos UBP</h1>
+    </div>
+    <div class="col">
+      <div class="card card1" style="text-align: left; width: 95%">
+        <div class="row g-0">
+          <div class="col-md-4" style="margin-top: 0.7rem; margin:0px auto ; ">
+            <img src={{getAhora().ico}} style="	margin-left: auto;
+    margin-right: auto;
+    margin-top: 28%;
+    display: block;
+    width:50px;
+	height:50px;
+    " class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body p-2">
+              <p class="card-text">Temperatura: {{getAhora().temperature}} °C</p>
+              <p class="card-text">Descripcion: {{getAhora().text}}</p>
+              <p class="card-text">Humetadad: {{getAhora().humidity}}%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4 tarjeta" *ngFor="let evento of eventos ;let indice=index">
+        <div class="card">
+          <div class="card-text">
+            <span class="date">{{evento.fecha_evento}}</span>
+            <br>
+            <div style="background-color: rgb(151, 196, 195) ;    margin: 3%;padding: 1%; border-radius:18px">
+              <label align="left"> Temp {{getIndice(indice+1).temperature_max}}°C - {{getIndice(indice+1).text}}
+              </label>
+              <img src={{getIndice(indice+1).test}} alt="Workplace" usemap="#workmap" width="40" height="38">
+            </div>
+            <h2>{{evento.nom_evento}}</h2>
+            <div [innerHtml]=evento.desc_evento></div>
+
+          </div>
+          <div class="card-stats row-4">
+            <button (click)="inscribir(evento.nro_evento)" class="btn btn-primary btn-lg btn-block moreInfo"
+              mat-button>+ INFO</button>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>

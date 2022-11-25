@@ -1,0 +1,61 @@
+<div class="br">
+  <br>
+</div>
+<div class="datos container">
+    <h1>NRO EVENTO: {{evento.nro_evento}}</h1>
+    <h2>{{evento.nom_evento}}</h2>
+    <h3>FECHA EVENTO: {{evento.fecha_evento}}</h3>
+    <div [innerHtml] = descripcion ></div>
+    <h5> Seleccion Actividades: <ng-container *ngIf="evento.tipo_evento === 'M'">
+      Multiple
+    </ng-container>
+    <ng-container *ngIf="evento.tipo_evento === 'U'">
+       Unico
+    </ng-container></h5>
+</div>
+<div class="datos container">
+
+<form [formGroup]="inscripcionActividadesForm" (ngSubmit)="inscribir()" class="container">
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="iapellido">Apellido</label>
+        <input type="text" class="form-control" id="iapellido" formControlName="apellido" placeholder="Apellido" />
+      </div>
+      <div class="form-group">
+        <label for="inombre">Nombre</label>
+        <input type="text" class="form-control" id="inombre" formControlName="nombre" placeholder="Nombre" />
+      </div>
+      <div class="form-group">
+        <label for="icorreo">Correo</label>
+        <input type="text" class="form-control" id="icorreo" formControlName="correo" placeholder="correo" />
+      </div>
+      <div class="form-group">
+        <label for="iconfirmarcorreo">Confirmar correo</label>
+        <input type="text" class="form-control" id="iconfirmarcorreo" formControlName="confirmarCorreo" placeholder="confirmar correo" />
+      </div>
+    </div>
+    <br>
+    <div class="row" *ngFor="let actividad of actividades;">
+     
+        <div class="col-8">
+          
+            {{actividad.nom_actividad}}
+        </div>
+        <div class="col-4" align="center">
+            <ng-container *ngIf="evento.tipo_evento === 'M'">
+                <input type="checkbox" (click)="setActividades(actividad.nro_actividad)" />
+              </ng-container>
+              <ng-container *ngIf="evento.tipo_evento === 'U'">
+                <input type="radio" id="actividad" name="actividad" (click)="setActividades(actividad.nro_actividad)" />
+              </ng-container>
+        </div>
+    </div>
+<br>
+
+      
+    <button class="btn btn-success" type="submit">Inscribir</button> 
+    <button  class="btn btn-warning" [routerLink]="['/home']" routerLinkActive="router-link-active"  type="button">Volver</button>
+    <br> <br> 
+</form>  
+</div>  
+<br>
